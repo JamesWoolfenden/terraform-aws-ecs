@@ -1,0 +1,61 @@
+[
+  {
+  "volumesFrom": [],
+  "memory": 512,
+  "extraHosts": null,
+  "dnsServers": null,
+  "disableNetworking": null,
+  "dnsSearchDomains": null,
+  "portMappings": [
+    {
+      "hostPort": 8002,
+      "containerPort": 9000,
+      "protocol": "tcp"
+    }
+  ],
+  "hostname": null,
+  "essential": true,
+  "entryPoint": [],
+  "mountPoints": [],
+  "name": "appstore",
+  "ulimits": null,
+  "dockerSecurityOptions": null,
+  "environment": [
+    {
+      "name": "DMS_HOST_URL",
+      "value": "http://dms.ops.aevi-test.io"
+    },
+    {
+      "name": "SENDER_EMAIL_ADDRESS",
+      "value": "noreply@aevi.com"
+    },
+    {
+      "name": "MARKETPLACE_HOST_URL",
+      "value": "http://appstore.ops.aevi-test.io"
+    },
+    {
+      "name": "ADMINPORTAL_HOST_URL",
+      "value": "http://admin.ops.aevi-test.io"
+    },
+    {
+      "name": "VIRTUAL_HOST",
+      "value": "appstore.*"
+    },
+    {
+      "name": "APPLICATION_SECRET",
+      "value": "notset"
+    }
+  ],
+  "workingDirectory": null,
+  "readonlyRootFilesystem": null,
+  "image": "aevi/aevi-ecosystem:latest",
+  "command": [
+    "marketplace/target/universal/stage/bin/marketplace"
+    ],
+  "user": null,
+  "dockerLabels": null,
+  "logConfiguration": null,
+  "cpu": 0,
+  "privileged": null
+ }
+]

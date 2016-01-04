@@ -1,0 +1,7 @@
+terraform.tfstate
+terraform.tfstate.backup
+secrets.tf
+terraform.state
+*.zip
+hosts/
+state/

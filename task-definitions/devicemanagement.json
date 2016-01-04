@@ -1,0 +1,45 @@
+[
+    {
+      "volumesFrom": [],
+      "memory": 512,
+      "extraHosts": null,
+      "dnsServers": null,
+      "disableNetworking": null,
+      "dnsSearchDomains": null,
+      "portMappings": [
+        {
+          "hostPort": 8000,
+          "containerPort": 9000,
+          "protocol": "tcp"
+        }
+      ],
+      "hostname": null,
+      "essential": true,
+      "entryPoint": [],
+      "mountPoints": [],
+      "name": "devicemanagement",
+      "ulimits": null,
+      "dockerSecurityOptions": null,
+      "environment": [
+        {
+          "name": "SENDER_EMAIL_ADDRESS",
+          "value": "noreply@aevi.com"
+        },
+        {
+          "name": "VIRTUAL_HOST",
+          "value": "dms.*"
+        }
+      ],
+      "workingDirectory": null,
+      "readonlyRootFilesystem": null,
+      "image": "aevi/aevi-ecosystem:latest",
+      "command": [
+        "devicemanagement/target/universal/stage/bin/devicemanagement"
+      ],
+      "user": null,
+      "dockerLabels": null,
+      "logConfiguration": null,
+      "cpu": 0,
+      "privileged": null
+    } 
+  ]
