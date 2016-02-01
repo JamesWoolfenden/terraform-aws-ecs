@@ -1,7 +1,7 @@
 #
 # Create IAM Instance Profile
 #
-resource "aws_iam_instance_profile" "terraform-ecs-profile" {
+/*resource "aws_iam_instance_profile" "terraform-ecs-profile" {
     name = "terraform-ecs-profile"
     #roles = ["${aws_iam_role.ecsInstanceRole.name},${aws_iam_role.ecsServiceRole.name}"]
     roles = ["${aws_iam_role.ecsInstanceRole.name}"]
@@ -17,4 +17,4 @@ resource "aws_iam_role_policy" "ecsInstancePolicy" {
 resource "aws_iam_role" "ecsInstanceRole" {
     name = "ecsInstanceRole"
     assume_role_policy = "${file("iam-policies/assume-role-policy.json")}"
-}
+}*/
