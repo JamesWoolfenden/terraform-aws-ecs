@@ -28,7 +28,7 @@ resource "aws_elb" "admin" {
   }
 
   access_logs {
-    bucket        = "elb-logs.aevi"
+    bucket        = "elb-logs.test"
     bucket_prefix = "admin"
     interval      = 60
   }

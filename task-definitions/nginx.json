@@ -30,7 +30,7 @@
   "links": [],
   "workingDirectory": null,
   "readonlyRootFilesystem": null,
-  "image": "aevi/nginx-proxy:latest",
+  "image": "test/nginx-proxy:latest",
   "command": [],
   "user": null,
   "dockerLabels": null,

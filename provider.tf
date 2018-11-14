@@ -1,5 +1,8 @@
 provider "aws" {
-  access_key = "${var.access_key}"
-  secret_key = "${var.secret_key}"
+  version = "~> 1.43"
   region     = "${var.region}"
+}
+
+provider "tls" {
+  version="~> 1.2"
 }

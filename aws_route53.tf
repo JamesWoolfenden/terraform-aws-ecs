@@ -17,7 +17,6 @@ resource "aws_route53_record" "admin" {
   records = ["${aws_instance.docker-host.public_dns}"]
 }
 
-/*"appstore.${var.environment}.${var.domain}"*/
 resource "aws_route53_record" "appstore" {
   zone_id = "${var.zone_id}"
   name    = "appstore.${lookup(var.dnsname, var.environment)}"

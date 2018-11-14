@@ -17,29 +17,25 @@
       "essential": true,
       "entryPoint": [],
       "mountPoints": [],
-      "name": "devicemanagement",
+      "name": "cowsay",
       "ulimits": null,
       "dockerSecurityOptions": null,
       "environment": [
         {
-          "name": "SENDER_EMAIL_ADDRESS",
-          "value": "noreply@aevi.com"
-        },
-        {
-          "name": "VIRTUAL_HOST",
-          "value": "dms.*"
+          "name": "SOME_PARAM",
+          "value": "noreply@test.com"
         }
       ],
       "workingDirectory": null,
       "readonlyRootFilesystem": null,
-      "image": "aevi/aevi-ecosystem:latest",
+      "image": "somerepo/cowsay:latest",
       "command": [
-        "devicemanagement/target/universal/stage/bin/devicemanagement"
+        "startsomething"
       ],
       "user": null,
       "dockerLabels": null,
       "logConfiguration": null,
       "cpu": 0,
       "privileged": null
-    } 
+    }
   ]
