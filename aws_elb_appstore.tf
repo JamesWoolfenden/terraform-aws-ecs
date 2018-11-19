@@ -1,7 +1,7 @@
 # Create a new load balancer
 resource "aws_elb" "appstore" {
   name               = "appstore"
-  availability_zones = "${var.availability_zones}"
+  availability_zones = ["${data.aws_availability_zones.available.names}"]
 
   listener {
     instance_port     = 8002

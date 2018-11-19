@@ -1,8 +1,8 @@
 provider "aws" {
   version = "~> 1.43"
-  region     = "${var.region}"
+  region  = "${var.region}"
 }
 
 provider "tls" {
-  version="~> 1.2"
+  version = "~> 1.2"
 }

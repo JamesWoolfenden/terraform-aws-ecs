@@ -1,7 +1,7 @@
 resource "aws_instance" "docker-host" {
   availability_zone = "${var.region}a"
   key_name          = "${aws_key_pair.terraform-ecs.key_name}"
-  ami               = "${lookup(var.aws_amis, var.region)}"
+  ami               = "${data.aws_ami.ubuntu.image_id}"
   instance_type     = "${var.instance_type}"
 
   root_block_device {
@@ -20,11 +20,9 @@ echo 'ECS_ENGINE_AUTH_TYPE=docker' >> /etc/ecs/ecs.config
 echo 'ECS_ENGINE_AUTH_DATA={\"https://index.docker.io/v1/\":{\"username\":\"${var.docker-user}\",\"password\":\"${var.docker-pass}\",\"email\":\"${var.docker-email}\"}}'  >> /etc/ecs/ecs.config"
 echo 'ECS_CLUSTER=${aws_ecs_cluster.terraform-ecs.name}' >> /etc/ecs/ecs.config
 chmod 644 /etc/ecs/ecs.config
-echo 'export DB_HOST1_PORT_9042_TCP_ADDR=${aws_instance.docker-host.public_dns}' >> ~/.bashrc
 echo 'export DNSNAME=${lookup(var.dnsname, var.environment)}' >> ~/.bashrc
 echo '#!/bin/bash\necho ECS_CLUSTER=${aws_ecs_cluster.terraform-ecs.name}' >> /etc/ecs/ecs.config
 EOF
-
 
   security_groups = ["${aws_security_group.terraform-ecs.name}"]
 
