@@ -15,8 +15,6 @@ resource "aws_elb" "admin" {
     instance_protocol = "http"
     lb_port           = 80
     lb_protocol       = "http"
-
-    /*  ssl_certificate_id = "arn:aws:iam::123456789012:server-certificate/certName"*/
   }
 
   health_check {
@@ -42,7 +40,5 @@ resource "aws_elb" "admin" {
   security_groups = ["${aws_security_group.terraform-ecs.id}"]
   depends_on      = ["aws_instance.docker-host"]
 
-  tags = {
-    "Environment" = "${var.environment}"
-  }
+  tags = {}
 }

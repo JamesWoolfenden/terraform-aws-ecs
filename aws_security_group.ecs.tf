@@ -1,5 +1,5 @@
 resource "aws_security_group" "terraform-ecs" {
-  name        = "terraform-ecs-${var.environment}"
+  name        = "terraform-ecs"
   description = "Terraform terraform-ecs security group"
 
   // allows traffic from the SG itself for tcp
@@ -111,7 +111,7 @@ resource "aws_security_group" "terraform-ecs" {
   }
 
   tags = {
-    "Name"        = "terraform-ecs-${var.environment}"
+    "Name"        = "terraform-ecs"
     "Environment" = "Development"
     "Role"        = "ecs"
   }

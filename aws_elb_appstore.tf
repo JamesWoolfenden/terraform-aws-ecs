@@ -32,7 +32,5 @@ resource "aws_elb" "appstore" {
   security_groups             = ["${aws_security_group.terraform-ecs.id}"]
   depends_on                  = ["aws_instance.docker-host"]
 
-  tags = {
-    "Environment" = "${var.environment}"
-  }
+  tags = {}
 }

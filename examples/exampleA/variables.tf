@@ -1,8 +1,6 @@
-variable "region" {
-  default = "eu-west-1"
+variable "instance_type" {
+  description = ""
 }
-
-variable "instance_type" {}
 
 variable "docker-email" {
   description = "description"
