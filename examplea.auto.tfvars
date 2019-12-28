@@ -1,0 +1,11 @@
+region                = "eu-west-1"
+instance_type         = "t3.micro"
+environment           = "dev"
+domain                = "test.io"
+devman-desiredcount   = 1
+appstore-desiredcount = 1
+admin-desiredcount    = 1
+docker-user           = ""
+docker-pass           = ""
+docker-email          = ""
+zone_id               = "xxx"

@@ -6,3 +6,4 @@ terraform.state
 hosts/
 state/
 .terraform/
+id_rsa*

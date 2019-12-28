@@ -26,5 +26,6 @@ docs:
 		terraform-docs md . > README.md
 
 valid:
-		tflint
-		terraform fmt -check=true -diff=true
+	    terraform init
+		terraform validate
+		terraform fmt

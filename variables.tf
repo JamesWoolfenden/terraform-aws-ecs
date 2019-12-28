@@ -12,3 +12,15 @@ variable "docker-email" {
 variable "docker-user" {}
 
 variable "docker-pass" {}
+
+variable "common_tags" {
+  default = {
+    Name = "terraform-ecs"
+  }
+}
+
+variable "allowed_range" {
+  description = "IP ranges allowed to connect"
+  type        = list
+  default     = ["0.0.0.0/0"]
+}

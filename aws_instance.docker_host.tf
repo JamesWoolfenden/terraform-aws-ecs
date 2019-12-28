@@ -1,13 +1,13 @@
 resource "aws_instance" "docker_host" {
-  availability_zone = "${var.region}a"
-  key_name          = "${aws_key_pair.terraform-ecs.key_name}"
-  ami               = "${data.aws_ami.ubuntu.ami}"
-  instance_type     = "${var.instance_type}"
+  availability_zone = element(data.aws_availability_zones.available.id, 0)
+  key_name          = aws_key_pair.terraform-ecs.key_name
+  ami               = data.aws_ami.ubuntu.id
+  instance_type     = var.instance_type
 
   root_block_device {
     volume_type           = "standard"
     volume_size           = 100
-    delete_on_termination = 1
+    delete_on_termination = true
   }
 
   iam_instance_profile = "ecsInstanceRole"
@@ -23,9 +23,7 @@ chmod 644 /etc/ecs/ecs.config
 echo '#!/bin/bash\necho ECS_CLUSTER=${aws_ecs_cluster.terraform-ecs.name}' >> /etc/ecs/ecs.config
 EOF
 
-  security_groups = ["${aws_security_group.terraform-ecs.name}"]
+  security_groups = [aws_security_group.terraform-ecs.name]
 
-  tags = {
-    "Name" = "terraform-ecs"
-  }
+  tags = var.common_tags
 }
