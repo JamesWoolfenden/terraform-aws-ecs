@@ -8,6 +8,7 @@ resource "aws_instance" "docker_host" {
     volume_type           = "standard"
     volume_size           = 100
     delete_on_termination = true
+    encrypted             = true
   }
 
   iam_instance_profile = "ecsInstanceRole"
