@@ -12,30 +12,7 @@ Thankfully I would do it much different from how this started.
 Don't pass your docker pass words like this example.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Providers
-
-| Name | Version |
-|------|---------|
-| aws | 2.42 |
-| local | ~> 1.4 |
-| tls | ~> 2.1 |
-
-## Inputs
-
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
-| allowed\_range | IP ranges allowed to connect | `list` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
-| common\_tags | n/a | `map` | <pre>{<br>  "Name": "terraform-ecs"<br>}</pre> | no |
-| docker-email | description | `string` | `"description"` | no |
-| docker-pass | n/a | `any` | n/a | yes |
-| docker-user | n/a | `any` | n/a | yes |
-| instance\_type | n/a | `any` | n/a | yes |
-| region | n/a | `string` | `"eu-west-1"` | no |
-
-## Outputs
-
-No output.
-
+Error: no lines in file
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
