@@ -1,7 +1,7 @@
 # Create a new load balancer
 resource "aws_elb" "appstore" {
   name               = "appstore"
-  availability_zones = [data.aws_availability_zones.available.names]
+  availability_zones = data.aws_availability_zones.available.names
 
   listener {
     instance_port     = 8002
@@ -30,7 +30,7 @@ resource "aws_elb" "appstore" {
   connection_draining         = true
   connection_draining_timeout = 400
   security_groups             = [aws_security_group.terraform-ecs.id]
-  depends_on                  = ["aws_instance.docker_host"]
+  depends_on                  = [aws_instance.docker_host]
 
   tags = {}
 }

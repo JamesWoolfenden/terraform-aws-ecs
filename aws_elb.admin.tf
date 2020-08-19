@@ -1,7 +1,7 @@
 # Create a new load balancer
 resource "aws_elb" "admin" {
   name               = "admin"
-  availability_zones = [data.aws_availability_zones.available.names]
+  availability_zones = data.aws_availability_zones.available.names
 
   listener {
     instance_port     = 8001
@@ -38,7 +38,7 @@ resource "aws_elb" "admin" {
   connection_draining_timeout = 400
 
   security_groups = [aws_security_group.terraform-ecs.id]
-  depends_on      = ["aws_instance.docker_host"]
+  depends_on      = [aws_instance.docker_host]
 
   tags = {}
 }

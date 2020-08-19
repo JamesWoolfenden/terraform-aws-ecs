@@ -1,6 +1,6 @@
 provider "aws" {
   region  = "eu-west-1"
-  version = "2.68.0"
+  version = "3.00.0"
 }
 
 provider "local" {
@@ -9,4 +9,8 @@ provider "local" {
 
 provider "tls" {
   version = "~> 2.1"
+}
+
+provider "random" {
+  version = "2.3.0"
 }
