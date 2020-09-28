@@ -26,5 +26,9 @@ EOF
 
   security_groups = [aws_security_group.terraform-ecs.name]
 
+  metadata_options {
+    http_tokens = "required"
+  }
+
   tags = var.common_tags
 }
