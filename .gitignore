@@ -7,3 +7,6 @@ hosts/
 state/
 .terraform/
 id_rsa*
+.terraform.tfstate.lock.info
+.terraform.lock.hcl
+__pycache__/

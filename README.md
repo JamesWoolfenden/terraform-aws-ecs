@@ -1,7 +1,13 @@
 # terraform-aws-ecs
 
+[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-ecs/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-ecs)
+[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-ecs.svg)](https://github.com/JamesWoolfenden/terraform-aws-ecs/releases/latest)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-ecs.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-ecs/releases/latest)
+![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/JamesWoolfenden/terraform-aws-ecs/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-ecs&benchmark=CIS+AWS+V1.2)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-aws-ecs/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-ecs&benchmark=INFRASTRUCTURE+SECURITY)
 
 Old Working model for using AWS ECS via Terraform
 
@@ -22,7 +28,7 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| allowed\_range | IP ranges allowed to connect | `list` | <pre>[<br>  "0.0.0.0/0"<br>]</pre> | no |
+| allowed\_range | IP ranges allowed to connect | `list(any)` | n/a | yes |
 | common\_tags | n/a | `map` | <pre>{<br>  "Name": "terraform-ecs"<br>}</pre> | no |
 | docker-email | description | `string` | `"description"` | no |
 | docker-pass | n/a | `any` | n/a | yes |

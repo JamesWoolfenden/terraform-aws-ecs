@@ -29,8 +29,7 @@ variable "common_tags" {
 
 variable "allowed_range" {
   description = "IP ranges allowed to connect"
-  type        = list
-  default     = ["0.0.0.0/0"]
+  type        = list(any)
 }
 
 
