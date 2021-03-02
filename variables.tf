@@ -38,3 +38,11 @@ variable "name" {
   description = "(optional) describe your variable"
   default     = "terraform-ecs"
 }
+
+variable "container" {
+
+}
+
+variable "cassandra" {
+
+}

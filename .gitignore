@@ -1,12 +1,25 @@
-terraform.tfstate
-terraform.tfstate.backup
-secrets.tf
-terraform.state
+# Compiled files
+*.tfstate
+*.tfstate.backup
 *.zip
-hosts/
-state/
+.DS_Store
+# Module directory
 .terraform/
-id_rsa*
+.terraform
+__pycache__/
+.idea
+*.iml
+*.orig
+*.ini
+*~HEAD
+*backup
+tmp
+lambda
+*~HEAD
+*backup
+*.bak
 .terraform.tfstate.lock.info
 .terraform.lock.hcl
-__pycache__/
+tf.json
+tf.plan
+*.log
