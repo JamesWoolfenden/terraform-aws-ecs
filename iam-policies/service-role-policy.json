@@ -1,8 +1,6 @@
 {
-  "Version": "2012-10-17",
   "Statement": [
     {
-      "Effect": "Allow",
       "Action": [
         "elasticloadbalancing:Describe*",
         "elasticloadbalancing:DeregisterInstancesFromLoadBalancer",
@@ -10,9 +8,11 @@
         "ec2:Describe*",
         "ec2:AuthorizeSecurityGroupIngress"
       ],
+      "Effect": "Allow",
       "Resource": [
         "*"
       ]
     }
-  ]
+  ],
+  "Version": "2012-10-17"
 }

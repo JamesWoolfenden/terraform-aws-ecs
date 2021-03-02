@@ -1,8 +1,6 @@
 {
-  "Version": "2012-10-17",
   "Statement": [
     {
-      "Effect": "Allow",
       "Action": [
         "ecs:CreateCluster",
         "ecs:DeregisterContainerInstance",
@@ -12,9 +10,11 @@
         "ecs:StartTelemetrySession",
         "ecs:Submit*"
       ],
+      "Effect": "Allow",
       "Resource": [
         "*"
       ]
     }
-  ]
+  ],
+  "Version": "2012-10-17"
 }

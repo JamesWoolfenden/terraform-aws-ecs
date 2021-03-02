@@ -1,42 +1,42 @@
 [
-{
-  "volumesFrom": [],
-  "memory": 512,
-  "extraHosts": null,
-  "dnsServers": null,
-  "disableNetworking": null,
-  "dnsSearchDomains": null,
-  "portMappings": [
-    {
-      "hostPort": 80,
-      "containerPort": 80,
-      "protocol": "tcp"
-    }
-  ],
-  "hostname": null,
-  "essential": true,
-  "entryPoint": [],
-  "mountPoints": [
-    {
-      "containerPath": "/tmp/docker.sock",
-      "sourceVolume": "volume-0",
-      "readOnly": true
-    }
-  ],
-  "name": "nginx-proxy",
-  "ulimits": null,
-  "dockerSecurityOptions": null,
-  "environment": [],
-  "links": [],
-  "workingDirectory": null,
-  "readonlyRootFilesystem": null,
-  "image": "test/nginx-proxy:latest",
-  "command": [],
-  "user": null,
-  "dockerLabels": null,
-  "logConfiguration": null,
-  "cpu": 0,
-  "privileged": null,
-  "expanded": false
-}
+  {
+    "command": [],
+    "cpu": 0,
+    "disableNetworking": null,
+    "dnsSearchDomains": null,
+    "dnsServers": null,
+    "dockerLabels": null,
+    "dockerSecurityOptions": null,
+    "entryPoint": [],
+    "environment": [],
+    "essential": true,
+    "expanded": false,
+    "extraHosts": null,
+    "hostname": null,
+    "image": "test/nginx-proxy:latest",
+    "links": [],
+    "logConfiguration": null,
+    "memory": 512,
+    "mountPoints": [
+      {
+        "containerPath": "/tmp/docker.sock",
+        "readOnly": true,
+        "sourceVolume": "volume-0"
+      }
+    ],
+    "name": "nginx-proxy",
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "hostPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "privileged": null,
+    "readonlyRootFilesystem": null,
+    "ulimits": null,
+    "user": null,
+    "volumesFrom": [],
+    "workingDirectory": null
+  }
 ]

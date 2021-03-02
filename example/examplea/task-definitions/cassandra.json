@@ -1,35 +1,35 @@
 [
-    {
-      "volumesFrom": [],
-      "memory": 512,
-      "extraHosts": null,
-      "dnsServers": null,
-      "disableNetworking": null,
-      "dnsSearchDomains": null,
-      "portMappings": [
-        {
-          "hostPort": 9042,
-          "containerPort": 9042,
-          "protocol": "tcp"
-        }
-      ],
-      "hostname": null,
-      "essential": true,
-      "entryPoint": [],
-      "mountPoints": [],
-      "name": "cassandra",
-      "ulimits": null,
-      "dockerSecurityOptions": null,
-      "environment": [],
-      "links": [],
-      "workingDirectory": null,
-      "readonlyRootFilesystem": null,
-      "image": "cassandra:2",
-      "command": [],
-      "user": null,
-      "dockerLabels": null,
-      "logConfiguration": null,
-      "cpu": 0,
-      "privileged": null
-    }
-  ]
+  {
+    "command": [],
+    "cpu": 0,
+    "disableNetworking": null,
+    "dnsSearchDomains": null,
+    "dnsServers": null,
+    "dockerLabels": null,
+    "dockerSecurityOptions": null,
+    "entryPoint": [],
+    "environment": [],
+    "essential": true,
+    "extraHosts": null,
+    "hostname": null,
+    "image": "cassandra:2",
+    "links": [],
+    "logConfiguration": null,
+    "memory": 512,
+    "mountPoints": [],
+    "name": "cassandra",
+    "portMappings": [
+      {
+        "containerPort": 9042,
+        "hostPort": 9042,
+        "protocol": "tcp"
+      }
+    ],
+    "privileged": null,
+    "readonlyRootFilesystem": null,
+    "ulimits": null,
+    "user": null,
+    "volumesFrom": [],
+    "workingDirectory": null
+  }
+]
