@@ -20,50 +20,54 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
-| local | n/a |
-| tls | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_local"></a> [local](#provider\_local) | n/a |
+| <a name="provider_tls"></a> [tls](#provider\_tls) | n/a |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [aws_ami](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami) |
-| [aws_availability_zones](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones) |
-| [aws_ecs_cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_cluster) |
-| [aws_ecs_service](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_service) |
-| [aws_ecs_task_definition](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_task_definition) |
-| [aws_efs_access_point](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/efs_access_point) |
-| [aws_efs_file_system](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/efs_file_system) |
-| [aws_elb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elb) |
-| [aws_instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) |
-| [aws_key_pair](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair) |
-| [aws_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) |
-| [local_file](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) |
-| [tls_private_key](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) |
+| Name | Type |
+|------|------|
+| [aws_ecs_cluster.terraform-ecs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_cluster) | resource |
+| [aws_ecs_service.cassandra](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_service) | resource |
+| [aws_ecs_service.terraform-ecs-service-nginx](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_service) | resource |
+| [aws_ecs_task_definition.cassandra](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_task_definition) | resource |
+| [aws_ecs_task_definition.nginx](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_task_definition) | resource |
+| [aws_efs_access_point.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/efs_access_point) | resource |
+| [aws_efs_file_system.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/efs_file_system) | resource |
+| [aws_elb.admin](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elb) | resource |
+| [aws_elb.appstore](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elb) | resource |
+| [aws_instance.docker_host](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
+| [aws_key_pair.terraform-ecs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair) | resource |
+| [aws_security_group.terraform-ecs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
+| [local_file.privatekey](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
+| [local_file.publickey](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
+| [tls_private_key.terraform-ecs](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) | resource |
+| [aws_ami.ubuntu](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami) | data source |
+| [aws_availability_zones.available](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| allowed\_range | IP ranges allowed to connect | `list(any)` | n/a | yes |
-| cassandra | n/a | `any` | n/a | yes |
-| common\_tags | n/a | `map` | <pre>{<br>  "Name": "terraform-ecs"<br>}</pre> | no |
-| container | n/a | `any` | n/a | yes |
-| docker-email | description | `string` | `"description"` | no |
-| docker-pass | n/a | `any` | n/a | yes |
-| docker-user | n/a | `string` | `"admin"` | no |
-| instance\_type | Size of host instance | `string` | `"t3.micro"` | no |
-| name | (optional) describe your variable | `string` | `"terraform-ecs"` | no |
-| region | n/a | `string` | `"eu-west-1"` | no |
+| <a name="input_allowed_range"></a> [allowed\_range](#input\_allowed\_range) | IP ranges allowed to connect | `list(any)` | n/a | yes |
+| <a name="input_cassandra"></a> [cassandra](#input\_cassandra) | n/a | `any` | n/a | yes |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | n/a | `map` | <pre>{<br>  "Name": "terraform-ecs"<br>}</pre> | no |
+| <a name="input_container"></a> [container](#input\_container) | n/a | `any` | n/a | yes |
+| <a name="input_docker-email"></a> [docker-email](#input\_docker-email) | description | `string` | `"description"` | no |
+| <a name="input_docker-pass"></a> [docker-pass](#input\_docker-pass) | n/a | `any` | n/a | yes |
+| <a name="input_docker-user"></a> [docker-user](#input\_docker-user) | n/a | `string` | `"admin"` | no |
+| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Size of host instance | `string` | `"t3.micro"` | no |
+| <a name="input_name"></a> [name](#input\_name) | (optional) describe your variable | `string` | `"terraform-ecs"` | no |
+| <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"eu-west-1"` | no |
 
 ## Outputs
 
-No output.
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects

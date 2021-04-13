@@ -1,5 +1,6 @@
 # Create a new load balancer
 resource "aws_elb" "appstore" {
+  # checkov:skip=CKV_AWS_127: update example to use tls
   name               = "appstore"
   availability_zones = data.aws_availability_zones.available.names
 

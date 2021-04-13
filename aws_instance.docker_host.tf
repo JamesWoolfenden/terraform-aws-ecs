@@ -3,7 +3,8 @@ resource "aws_instance" "docker_host" {
   key_name          = aws_key_pair.terraform-ecs.key_name
   ami               = data.aws_ami.ubuntu.id
   instance_type     = var.instance_type
-
+  ebs_optimized     = true
+  monitoring        = true
   root_block_device {
     volume_type           = "standard"
     volume_size           = 100
