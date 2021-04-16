@@ -1,4 +1,5 @@
 # Create a new load balancer
+# tfsec:ignore:AWS005
 resource "aws_elb" "appstore" {
   # checkov:skip=CKV_AWS_127: update example to use tls
   name               = "appstore"
