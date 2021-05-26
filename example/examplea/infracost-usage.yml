@@ -1,0 +1,18 @@
+version: 0.1
+resource_usage:
+  module.ecs.aws_efs_file_system.examplea:
+    infrequent_access_storage_gb: 0
+    monthly_infrequent_access_read_gb: 0
+    monthly_infrequent_access_write_gb: 0
+    storage_gb: 0
+  module.ecs.aws_elb.admin:
+    monthly_data_processed_gb: 0
+  module.ecs.aws_elb.appstore:
+    monthly_data_processed_gb: 0
+  module.ecs.aws_instance.docker_host:
+    monthly_cpu_credit_hrs: 0
+    operating_system: linux
+    reserved_instance_payment_option: all_upfront
+    reserved_instance_term: 1_year
+    reserved_instance_type: standard
+    vcpu_count: 0
