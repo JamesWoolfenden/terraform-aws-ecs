@@ -1,4 +1,5 @@
 resource "aws_instance" "docker_host" {
+  # checkov:skip=CKV2_AWS_17: Duff rule
   availability_zone = element(data.aws_availability_zones.available.zone_ids, 0)
   key_name          = aws_key_pair.terraform-ecs.key_name
   ami               = data.aws_ami.ubuntu.id

@@ -5,10 +5,6 @@ on:
   pull_request:
   workflow_dispatch:
 
-env:
-  terraform: 0.15.0
-  tf_target_dir: example/examplea
-
 jobs:
   terraform:
     runs-on: ubuntu-latest
@@ -20,15 +16,24 @@ jobs:
       - name: Terraform Init
         uses: hashicorp/terraform-github-actions@master
         with:
-          tf_actions_version: ${{ env.terraform }}
+          tf_actions_version: 1.0.1
           tf_actions_subcommand: init
-          tf_actions_working_dir: ${{ env.tf_target_dir }}
+          tf_actions_working_dir: example/examplea
       - name: Terraform Validate
         uses: hashicorp/terraform-github-actions@master
         with:
-          tf_actions_version: ${{ env.terraform }}
+          tf_actions_version: 1.0.1
           tf_actions_subcommand: validate
-          tf_actions_working_dir: ${{ env.tf_target_dir }}
+          tf_actions_working_dir: example/examplea
+      - name: Terraform Plan
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 1.0.1
+          tf_actions_subcommand: plan
+          tf_actions_working_dir: example/examplea
+        env:
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   security:
     runs-on: ubuntu-latest
     steps:
@@ -41,10 +46,28 @@ jobs:
           python-version: 3.8
       - run: |
           pip3 install lastversion
-          now=$(lastversion terraform-docs)
+          lastversion terraform-docs --assets -d --verbose
           mkdir $GITHUB_WORKSPACE/bin
-          curl -L https://github.com/terraform-docs/terraform-docs/releases/download/v${now}/terraform-docs-v${now}-$(uname)-amd64.tar.gz -o terraform-docs.tar.gz
-          tar -xvf terraform-docs.tar.gz --directory $GITHUB_WORKSPACE/bin
+          tar -xvf terraform-docs*.tar.gz --directory $GITHUB_WORKSPACE/bin
           chmod +x $GITHUB_WORKSPACE/bin/terraform-docs
           echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
       - uses: pre-commit/action@v2.0.0
+  infracost:
+    runs-on: ubuntu-latest
+    name: Show infracost diff
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Run infracost diff
+        uses: infracost/infracost-gh-action@master # Use a specific version instead of master if locking is preferred
+        env:
+          INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
+          GITHUB_TOKEN: ${{ github.token }} # Do not change
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          # See the cloud credentials section for the options
+        with:
+          entrypoint: /scripts/ci/diff.sh # Do not change
+          path: example/examplea
+          usage_file: example/examplea/infracost-usage.yml
+          #terraform_plan_flags: -var-file=my.tfvars
