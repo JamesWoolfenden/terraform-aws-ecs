@@ -18,7 +18,6 @@ jobs:
         run: |
           pip3 install lastversion
           lastversion tfsec/tfsec --assets -d
-          wget https://github.com/tfsec/tfsec/releases/download/v${now}/tfsec-linux-amd64
           chmod +x tfsec-linux-amd64
           ./tfsec-linux-amd64 example/examplea -f json --out tfsec.json
         continue-on-error: true
