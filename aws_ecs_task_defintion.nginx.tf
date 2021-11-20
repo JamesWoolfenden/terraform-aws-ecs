@@ -21,7 +21,8 @@ resource "aws_ecs_task_definition" "nginx" {
 
 
 resource "aws_efs_file_system" "examplea" {
-  # checkov:skip=CKV2_AWS_18: ADD REASON
+  # checkov:skip=CKV2_AWS_18: TODO
+  # checkov:skip=CKV_AWS_184: TODO
   encrypted = true
 }
 
