@@ -28,5 +28,5 @@ resource "aws_efs_file_system" "examplea" {
 
 
 resource "aws_efs_access_point" "examplea" {
-  file_system_id = ""
+  file_system_id = aws_efs_file_system.examplea.id
 }
