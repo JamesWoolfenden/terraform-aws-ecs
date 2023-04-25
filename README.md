@@ -61,10 +61,13 @@ No modules.
 | <a name="input_docker-email"></a> [docker-email](#input\_docker-email) | description | `string` | `"description"` | no |
 | <a name="input_docker-pass"></a> [docker-pass](#input\_docker-pass) | n/a | `any` | n/a | yes |
 | <a name="input_docker-user"></a> [docker-user](#input\_docker-user) | n/a | `string` | `"admin"` | no |
+| <a name="input_gid"></a> [gid](#input\_gid) | You will need to override this value | `number` | `502` | no |
 | <a name="input_ingress"></a> [ingress](#input\_ingress) | n/a | `list` | <pre>[<br>  {<br>    "cidr_blocks": [<br>      "0.0.0.0/0"<br>    ],<br>    "description": "Default HTTPS port",<br>    "from_port": 443,<br>    "protocol": "tcp",<br>    "to_port": 443<br>  }<br>]</pre> | no |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Size of host instance | `string` | `"t3.micro"` | no |
 | <a name="input_name"></a> [name](#input\_name) | (optional) describe your variable | `string` | `"terraform-ecs"` | no |
 | <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"eu-west-1"` | no |
+| <a name="input_subnets"></a> [subnets](#input\_subnets) | n/a | `list(string)` | n/a | yes |
+| <a name="input_uid"></a> [uid](#input\_uid) | You will need to override this value | `number` | `1` | no |
 
 ## Outputs
 

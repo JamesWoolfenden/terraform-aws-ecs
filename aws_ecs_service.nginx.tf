@@ -5,5 +5,10 @@ resource "aws_ecs_service" "nginx" {
   desired_count   = 1
   network_configuration {
     assign_public_ip = false
+    subnets          = var.subnets
   }
+}
+
+variable "subnets" {
+  type = list(string)
 }
