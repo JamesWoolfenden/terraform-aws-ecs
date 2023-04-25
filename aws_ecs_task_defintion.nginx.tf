@@ -29,4 +29,16 @@ resource "aws_efs_file_system" "examplea" {
 
 resource "aws_efs_access_point" "examplea" {
   file_system_id = aws_efs_file_system.examplea.id
+  root_directory {
+    path="/data/nginx"
+  }
+  posix_user {
+    gid=var.gid
+  }
+}
+
+variable "gid" {
+  type = number
+  default=502
+  description = "You will need to override this value"
 }

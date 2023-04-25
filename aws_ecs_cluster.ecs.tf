@@ -1,4 +1,4 @@
-resource "aws_ecs_cluster" "terraform-ecs" {
+resource "aws_ecs_cluster" "ecs" {
   name = var.name
 
   setting {

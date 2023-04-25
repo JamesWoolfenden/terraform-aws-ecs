@@ -39,7 +39,7 @@ resource "aws_elb" "admin" {
   connection_draining         = true
   connection_draining_timeout = 400
 
-  security_groups = [aws_security_group.terraform-ecs.id]
+  security_groups = [aws_security_group.ecs.id]
   depends_on      = [aws_instance.docker_host]
 
   tags = {}

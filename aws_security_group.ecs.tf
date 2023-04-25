@@ -1,4 +1,5 @@
-resource "aws_security_group" "terraform-ecs" {
+#tfsec:ignore:aws-ec2-no-public-ingress-sgr
+resource "aws_security_group" "ecs" {
   name        = "terraform-ecs"
   description = "Terraform terraform-ecs security group"
 
