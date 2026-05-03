@@ -9,6 +9,5 @@ module "ecs" {
 }
 
 module "data" {
-  source  = "jameswoolfenden/ip/http"
-  version = "0.3.1"
+  source = "git::https://github.com/jameswoolfenden/terraform-http-ip.git?ref=e4a2c315e5936f84df0ecb359bbbb2e71a4f3f84" #v0.3.1
 }
