@@ -7,8 +7,6 @@ module "ecs" {
   cassandra     = file("./task-definitions/cassandra.json")
   subnets       = ["subnet-09ff91b5b0adb1fd4", "subnet-05e87623a2a5c41f0"]
 }
-
 module "data" {
-  source  = "jameswoolfenden/ip/http"
-  version = "0.3.1"
+  source = "git::https://github.com/JamesWoolfenden/terraform-http-ip.git?ref=5769331633debca683a81a38470083a0abd39049"
 }
