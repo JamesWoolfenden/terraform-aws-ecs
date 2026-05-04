@@ -94,15 +94,19 @@ resource "aws_iam_policy" "terraform_pike" {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
+                "ec2:AssociateIamInstanceProfile",
                 "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
                 "ec2:CreateKeyPair",
                 "ec2:CreateSecurityGroup",
                 "ec2:CreateTags",
                 "ec2:DeleteKeyPair",
+                "ec2:DeleteNetworkInterface",
                 "ec2:DeleteSecurityGroup",
                 "ec2:DeleteTags",
                 "ec2:DescribeAccountAttributes",
                 "ec2:DescribeAvailabilityZones",
+                "ec2:DescribeIamInstanceProfileAssociations",
                 "ec2:DescribeImages",
                 "ec2:DescribeInstanceAttribute",
                 "ec2:DescribeInstanceCreditSpecifications",
@@ -113,10 +117,14 @@ resource "aws_iam_policy" "terraform_pike" {
                 "ec2:DescribeSecurityGroups",
                 "ec2:DescribeTags",
                 "ec2:DescribeVolumes",
+                "ec2:DetachNetworkInterface",
+                "ec2:DisassociateIamInstanceProfile",
                 "ec2:ImportKeyPair",
                 "ec2:ModifyInstanceAttribute",
                 "ec2:MonitorInstances",
+                "ec2:ReplaceIamInstanceProfileAssociation",
                 "ec2:RevokeSecurityGroupEgress",
+                "ec2:RevokeSecurityGroupIngress",
                 "ec2:RunInstances",
                 "ec2:StartInstances",
                 "ec2:StopInstances",
@@ -139,8 +147,12 @@ resource "aws_iam_policy" "terraform_pike" {
                 "ecs:DescribeClusters",
                 "ecs:DescribeServices",
                 "ecs:DescribeTaskDefinition",
-                "ecs:ModifyCluster",
+                "ecs:ListTagsForResource",
+                "ecs:PutAccountSetting",
+                "ecs:PutAccountSettingDefault",
+                "ecs:PutClusterCapacityProviders",
                 "ecs:RegisterTaskDefinition",
+                "ecs:UpdateCluster",
                 "ecs:UpdateService"
             ],
             "Resource": [
@@ -157,7 +169,8 @@ resource "aws_iam_policy" "terraform_pike" {
                 "elasticfilesystem:DeleteFileSystem",
                 "elasticfilesystem:DescribeAccessPoints",
                 "elasticfilesystem:DescribeFileSystems",
-                "elasticfilesystem:DescribeLifecycleConfiguration"
+                "elasticfilesystem:DescribeLifecycleConfiguration",
+                "elasticfilesystem:ListTagsForResource"
             ],
             "Resource": [
                 "*"
@@ -175,8 +188,32 @@ resource "aws_iam_policy" "terraform_pike" {
                 "elasticloadbalancing:DescribeLoadBalancerAttributes",
                 "elasticloadbalancing:DescribeLoadBalancers",
                 "elasticloadbalancing:DescribeTags",
+                "elasticloadbalancing:EnableAvailabilityZonesForLoadBalancer",
                 "elasticloadbalancing:ModifyLoadBalancerAttributes",
-                "elasticloadbalancing:RemoveTags"
+                "elasticloadbalancing:RemoveTags",
+                "elasticloadbalancing:SetSecurityGroups"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor4",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateServiceLinkedRole",
+                "iam:PassRole"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor5",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:DeleteParameter",
+                "ssm:PutParameter"
             ],
             "Resource": [
                 "*"
