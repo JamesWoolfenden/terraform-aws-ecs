@@ -19,15 +19,11 @@ resource "aws_ecs_task_definition" "nginx" {
   }
 
 }
-
-
 resource "aws_efs_file_system" "examplea" {
   # checkov:skip=CKV2_AWS_18: TODO
   # checkov:skip=CKV_AWS_184: TODO
   encrypted = true
 }
-
-
 resource "aws_efs_access_point" "examplea" {
   file_system_id = aws_efs_file_system.examplea.id
   root_directory {
@@ -38,13 +34,11 @@ resource "aws_efs_access_point" "examplea" {
     gid = var.gid
   }
 }
-
 variable "gid" {
   type        = number
   default     = 502
   description = "You will need to override this value"
 }
-
 variable "uid" {
   type        = number
   default     = 1

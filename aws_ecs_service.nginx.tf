@@ -8,7 +8,6 @@ resource "aws_ecs_service" "nginx" {
     subnets          = var.subnets
   }
 }
-
 variable "subnets" {
   type = list(string)
 }

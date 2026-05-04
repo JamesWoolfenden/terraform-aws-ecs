@@ -1,5 +1,6 @@
 #tfsec:ignore:aws-ec2-no-public-ingress-sgr
 resource "aws_security_group" "ecs" {
+  # checkov:skip=CKV_AWS_382: Unrestricted outbound access required for resource functionality
   name        = "terraform-ecs"
   description = "Terraform terraform-ecs security group"
 
@@ -24,8 +25,6 @@ resource "aws_security_group" "ecs" {
 
   tags = var.common_tags
 }
-
-
 variable "ingress" {
   default = [{
     description = "Default HTTPS port"
